@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <h1>Mes tâches</h1>
+
+    <h2 id="welcomeMessage">
+        Bienvenue !
+    </h2>
+
+    <p id="taskCounter">
+        Nombre de tâches : 0
+    </p>
+
+    <button id="logoutBtn">
+        Déconnexion
+    </button>
+
+
+    <!-- ==================== -->
+    <!-- AJOUT D'UNE TÂCHE -->
+    <!-- ==================== -->
+
+    <h2>Ajouter une tâche</h2>
+
+    <form id="taskForm">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Titre"
+            required>
+
+        <textarea
+            id="description"
+            placeholder="Description">
+        </textarea>
+
+        <button type="submit">
+            Ajouter
+        </button>
+
+    </form>
+
+
+    <!-- ==================== -->
+    <!-- MODIFIER UNE TÂCHE -->
+    <!-- ==================== -->
+
+    <h2>Modifier une tâche</h2>
+
+    <form id="editForm">
+
+        <input
+            type="hidden"
+            id="editId">
+
+        <input
+            type="text"
+            id="editTitle"
+            placeholder="Titre">
+
+        <textarea
+            id="editDescription"
+            placeholder="Description">
+        </textarea>
+
+        <select id="editStatus">
+
+            <option value="À faire">
+                À faire
+            </option>
+
+            <option value="En cours">
+                En cours
+            </option>
+
+            <option value="Terminée">
+                Terminée
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+            Sauvegarder
+        </button>
+
+    </form>
+
+
+    <!-- ==================== -->
+    <!-- FILTRES -->
+    <!-- ==================== -->
+
+    <h2>Filtrer les tâches</h2>
+
+    <button onclick="loadTasks()">
+        Toutes
+    </button>
+
+    <button onclick="filterTasks('À faire')">
+        À faire
+    </button>
+
+    <button onclick="filterTasks('En cours')">
+        En cours
+    </button>
+
+    <button onclick="filterTasks('Terminée')">
+        Terminées
+    </button>
+
+
+    <!-- ==================== -->
+    <!-- STATISTIQUES -->
+    <!-- ==================== -->
+
+    <h2>Statistiques</h2>
+
+    <p id="completedCounter">
+        Tâches terminées : 0
+    </p>
+
+    <p id="progressPercent">
+        Progression : 0 %
+    </p>
+
+    <div class="progressBar">
+
+    <div id="progressFill">
+
+    </div>
+
+</div>
+
+
+    <!-- ==================== -->
+    <!-- LISTE DES TÂCHES -->
+    <!-- ==================== -->
+
+    <h2>Rechercher une tâche</h2>
+
+<input
+    type="text"
+    id="searchInput"
+    placeholder="Rechercher une tâche...">
+
+    <h2>Liste des tâches</h2>
+
+    <div id="taskList">
+
+    </div>
+
+
+    <script src="js/tasks.js"></script>
+
+</body>
+
+</html>

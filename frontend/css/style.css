@@ -1,0 +1,340 @@
+body {
+
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+
+}
+
+h1 {
+
+    text-align: center;
+    color: #333;
+
+}
+
+form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+input,
+textarea {
+
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+button {
+
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+#taskList {
+
+    margin-top: 30px;
+
+}
+
+#taskList div {
+
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+
+h3 {
+
+    color: #007bff;
+
+}
+
+#taskList div {
+
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+
+}
+
+button {
+
+    border-radius: 8px;
+
+}
+
+select {
+
+    padding: 8px;
+
+}
+
+#taskList div {
+
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+button {
+
+    margin-right: 10px;
+
+}
+
+.todo {
+
+    background-color: #ffe5e5;
+    border-left: 8px solid red;
+
+}
+
+.progress {
+
+    background-color: #fff4d6;
+    border-left: 8px solid orange;
+
+}
+
+.done {
+
+    background-color: #dff5df;
+    border-left: 8px solid green;
+
+}
+
+#taskList div {
+
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}
+
+body {
+
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+
+}
+
+h1 {
+
+    text-align: center;
+    color: #333;
+
+}
+
+button {
+
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+
+}
+
+body {
+
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+
+}
+
+h1 {
+
+    text-align: center;
+    color: #333;
+
+}
+
+h2 {
+
+    color: #007bff;
+
+}
+
+#taskCounter {
+
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+}
+
+button {
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+#logoutBtn {
+
+    background-color: crimson;
+
+}
+
+#logoutBtn:hover {
+
+    background-color: darkred;
+
+}
+
+
+/* Cartes des tâches */
+
+#taskList div {
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.15);
+
+}
+
+
+/* Couleurs selon le statut */
+
+.todo {
+
+    background-color: #ffe5e5;
+    border-left: 8px solid red;
+
+}
+
+.progress {
+
+    background-color: #fff4d6;
+    border-left: 8px solid orange;
+
+}
+
+.done {
+
+    background-color: #dff5df;
+    border-left: 8px solid green;
+
+}
+
+button {
+
+    margin-right: 10px;
+
+}
+
+.fa-pen {
+
+    color: blue;
+
+}
+
+.fa-trash {
+
+    color: red;
+
+}
+
+button {
+
+    margin-right: 10px;
+
+}
+
+.fa-pen {
+
+    color: blue;
+
+}
+
+.fa-trash {
+
+    color: red;
+
+}
+
+.progressBar {
+
+    width: 100%;
+
+    height: 25px;
+
+    background-color: #ddd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+
+}
+
+#progressFill {
+
+    height: 100%;
+
+    width: 0%;
+
+    background-color: green;
+
+    transition: 0.5s;
+
+}
