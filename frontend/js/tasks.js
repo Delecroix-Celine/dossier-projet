@@ -23,15 +23,31 @@ async function loadTasks() {
         }
     );
 
-    const tasks = await response.json();
+    let tasks = await response.json();
+
+    // Trier les tâches de la plus récente à la plus ancienne
+
+    tasks.sort(
+
+        (a, b) =>
+
+            new Date(b.created_at)
+
+            -
+
+            new Date(a.created_at)
+
+    );
 
     // Nombre total de tâches
+
     document.getElementById(
         "taskCounter"
     ).innerText =
         `Nombre de tâches : ${tasks.length}`;
 
-    // Tâches terminées
+    // Nombre de tâches terminées
+
     const completedTasks =
         tasks.filter(
             task => task.status === "Terminée"
@@ -43,6 +59,7 @@ async function loadTasks() {
         `Tâches terminées : ${completedTasks.length}`;
 
     // Pourcentage de progression
+
     const percent =
         tasks.length === 0
             ? 0
@@ -66,7 +83,7 @@ async function loadTasks() {
 
 
 // ====================
-// AFFICHER UNE LISTE DE TÂCHES
+// AFFICHER LES TÂCHES
 // ====================
 
 function displayTasks(tasks) {
@@ -75,6 +92,20 @@ function displayTasks(tasks) {
         document.getElementById("taskList");
 
     taskList.innerHTML = "";
+
+    if (tasks.length === 0) {
+
+        taskList.innerHTML = `
+
+            <h3>
+                Aucune tâche à afficher
+            </h3>
+
+        `;
+
+        return;
+
+    }
 
     tasks.forEach(task => {
 
@@ -107,15 +138,21 @@ function displayTasks(tasks) {
             <p>${task.description}</p>
 
             <p>
+
                 <strong>Statut :</strong>
+
                 ${task.status}
+
             </p>
 
             <p>
+
                 <strong>Créée le :</strong>
+
                 ${new Date(
                     task.created_at
                 ).toLocaleDateString('fr-FR')}
+
             </p>
 
             <button onclick="editTask(
@@ -126,6 +163,7 @@ function displayTasks(tasks) {
             )">
 
                 <i class="fa-solid fa-pen"></i>
+
                 Modifier
 
             </button>
@@ -133,6 +171,7 @@ function displayTasks(tasks) {
             <button onclick="deleteTask(${task.id})">
 
                 <i class="fa-solid fa-trash"></i>
+
                 Supprimer
 
             </button>
@@ -170,6 +209,7 @@ taskForm.addEventListener(
         await fetch(
             `${apiUrl}/tasks`,
             {
+
                 method: "POST",
 
                 headers: {
@@ -190,6 +230,10 @@ taskForm.addEventListener(
                 })
 
             }
+        );
+
+        alert(
+            "Tâche ajoutée avec succès !"
         );
 
         taskForm.reset();
@@ -220,6 +264,7 @@ async function deleteTask(id) {
     await fetch(
         `${apiUrl}/tasks/${id}`,
         {
+
             method: "DELETE",
 
             headers: {
@@ -230,6 +275,10 @@ async function deleteTask(id) {
             }
 
         }
+    );
+
+    alert(
+        "Tâche supprimée avec succès !"
     );
 
     loadTasks();
@@ -351,6 +400,10 @@ async function updateTask(
         }
     );
 
+    alert(
+        "Tâche modifiée avec succès !"
+    );
+
     loadTasks();
 
 }
@@ -425,7 +478,7 @@ document
 
                     ||
 
-                    task.description
+                    (task.description || "")
                         .toLowerCase()
                         .includes(keyword)
 
@@ -449,6 +502,10 @@ document
 
             localStorage.removeItem(
                 "token"
+            );
+
+            alert(
+                "Déconnexion réussie"
             );
 
             window.location.href =

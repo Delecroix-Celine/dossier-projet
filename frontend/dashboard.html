@@ -22,12 +22,42 @@
         Bienvenue !
     </h2>
 
+
+    <!-- ==================== -->
+    <!-- STATISTIQUES -->
+    <!-- ==================== -->
+
     <p id="taskCounter">
         Nombre de tâches : 0
     </p>
 
+    <p id="completedCounter">
+        Tâches terminées : 0
+    </p>
+
+    <p id="progressPercent">
+        Progression : 0 %
+    </p>
+
+    <div class="progressBar">
+
+        <div id="progressFill">
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- DÉCONNEXION -->
+    <!-- ==================== -->
+
     <button id="logoutBtn">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
         Déconnexion
+
     </button>
 
 
@@ -51,7 +81,11 @@
         </textarea>
 
         <button type="submit">
+
+            <i class="fa-solid fa-plus"></i>
+
             Ajouter
+
         </button>
 
     </form>
@@ -98,7 +132,11 @@
         <br><br>
 
         <button type="submit">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
             Sauvegarder
+
         </button>
 
     </form>
@@ -111,55 +149,45 @@
     <h2>Filtrer les tâches</h2>
 
     <button onclick="loadTasks()">
+
         Toutes
+
     </button>
 
     <button onclick="filterTasks('À faire')">
+
         À faire
+
     </button>
 
     <button onclick="filterTasks('En cours')">
+
         En cours
+
     </button>
 
     <button onclick="filterTasks('Terminée')">
+
         Terminées
+
     </button>
 
 
     <!-- ==================== -->
-    <!-- STATISTIQUES -->
+    <!-- RECHERCHE -->
     <!-- ==================== -->
 
-    <h2>Statistiques</h2>
+    <h2>Rechercher une tâche</h2>
 
-    <p id="completedCounter">
-        Tâches terminées : 0
-    </p>
-
-    <p id="progressPercent">
-        Progression : 0 %
-    </p>
-
-    <div class="progressBar">
-
-    <div id="progressFill">
-
-    </div>
-
-</div>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Rechercher une tâche...">
 
 
     <!-- ==================== -->
     <!-- LISTE DES TÂCHES -->
     <!-- ==================== -->
-
-    <h2>Rechercher une tâche</h2>
-
-<input
-    type="text"
-    id="searchInput"
-    placeholder="Rechercher une tâche...">
 
     <h2>Liste des tâches</h2>
 
